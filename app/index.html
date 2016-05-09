@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Karl App</title>
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <!--<link rel="manifest" href="manifest.json">-->
+
+  <!-- Tile color for Win8 -->
+  <!--<meta name="msapplication-TileColor" content="#3372DF">-->
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <!--<meta name="mobile-web-app-capable" content="yes">-->
+  <!--<meta name="application-name" content="PSK">-->
+  <!--<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">-->
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+  <!--<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+  <!--<meta name="apple-mobile-web-app-title" content="Polymer Starter Kit">-->
+  <!--<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">-->
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- Because this project uses vulcanize this should be your only html import
+       in this file. All other imports should go in elements.html -->
+  <link rel="import" href="elements/elements.html">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+</head>
+
+<body unresolved>
+  <span id="browser-sync-binding"></span>
+  
+  <template is="dom-bind" id="app">
+    <paper-header-panel main id="headerPanelMain" keep-condensed-header>
+      <paper-toolbar id="mainToolbar">
+        <span class="space"></span>
+
+        <!-- Toolbar icons -->
+        <paper-menu-button horizontal-align="right">
+          <paper-icon-button icon="add" class="dropdown-trigger">+</paper-icon-button>
+          <paper-menu class="dropdown-content">
+            <paper-item>
+              Slack
+            </paper-item>
+            <paper-item>
+              WhatsApp
+            </paper-item>
+          </paper-menu>
+        </paper-menu-button>
+
+        <!-- Application name -->
+        <div class="middle middle-container">
+          <div class="app-name">Karl</div>
+        </div>
+      </paper-toolbar>
+      
+      <div class="content">
+        <div class="tabs" hidden="{{tabs.length > 0}}">
+          <paper-tabs selected="{{selected}}">
+            <paper-tab>TAB 1</paper-tab>
+            <paper-tab>TAB 2</paper-tab>
+            <paper-tab>TAB 3</paper-tab>
+          </paper-tabs>
+          
+          <iron-pages selected="{{selected}}">
+            <div>
+              Page 1
+              <!--<webview id="simian" src="https://simian.slack.com" class="fullcontent"></webview>-->
+            </div>
+            <div>Page 2</div>
+            <div>Page 3</div>
+          </iron-pages>
+        </div>
+        
+        <!--<div class="welcome fullcontent" hidden="{{tabs.length == 0}}">-->
+        <div class="welcome fullcontent">
+          <div class="scroll"></div>
+          <div class="container flex-center-justified fullcontent">
+            <div>
+              <paper-card style="width: 400px;">
+                <div class="card-content">
+                  <h1>Welcome!</h1>
+                  <p>
+                    Karl is an app inspired by Franz and Slackdeck.
+                  </p>
+                  <p>
+                    Click on the icons below to add a new tab for a service.
+                  </p>
+                </div>
+                <div class="card-actions">
+                  <paper-button raised class="custom indigo">
+                    <iron-icon icon="add"></iron-icon>
+                    Slack
+                  </paper-button>
+                  <paper-button raised class="custom green">
+                    <iron-icon icon="add"></iron-icon>
+                    Whatsapp
+                  </paper-button>
+                </div>
+              </paper-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </paper-header-panel>
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>
