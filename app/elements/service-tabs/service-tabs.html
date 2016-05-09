@@ -14,6 +14,7 @@
     </style>
 
     <div class="tabs" hidden="{{tabs.length > 0}}">
+    <!--<div class="tabs">-->
       <paper-tabs selected="{{selected}}">
         <paper-tab>TAB 1</paper-tab>
         <paper-tab>TAB 2</paper-tab>
@@ -23,6 +24,7 @@
       <iron-pages selected="{{selected}}">
         <div>
           Page 1
+          <!--<iframe id="simian" src="https://simian.slack.com" class="fullcontent"></iframe>-->
           <!--<webview id="simian" src="https://simian.slack.com" class="fullcontent"></webview>-->
         </div>
         <div>Page 2</div>
@@ -37,9 +39,8 @@
 
       Polymer({
         is: 'service-tabs',
-
-        properties: {
-          selected: 0
+        ready: function() {
+          this.selected = 0;
         }
       });
     })();

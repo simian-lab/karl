@@ -1,0 +1,24 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<script>
+  // register a new element called proto-element
+  Polymer({
+    is: "tab-handler",
+    properties: {
+      tabs: Array
+    },
+    ready: function() {
+      if(chrome.storage && chrome.storage.sync) {
+        chrome.storage.sync.get('tabs', function(items) {
+          tabs = items;
+        });
+      }
+      else {
+        tabs = [];
+      }
+    },
+    addTab: function(type) {
+      console.log('add tab ' + type);
+    }
+  });
+</script>

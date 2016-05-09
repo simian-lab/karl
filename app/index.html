@@ -49,7 +49,8 @@
 <body unresolved>
   <span id="browser-sync-binding"></span>
   
-  <template is="dom-bind" id="app">
+  <template is="dom-bind" id="karl-app">
+    <tab-handler></tab-handler>
     <paper-header-panel main id="headerPanelMain" keep-condensed-header>
       <paper-toolbar id="mainToolbar">
         <span class="space"></span>
@@ -57,11 +58,11 @@
         <!-- Toolbar icons -->
         <paper-menu-button horizontal-align="right">
           <paper-icon-button icon="add" class="dropdown-trigger">+</paper-icon-button>
-          <paper-menu class="dropdown-content">
-            <paper-item>
+          <paper-menu class="dropdown-content" id="rightMenu">
+            <paper-item value="slack">
               Slack
             </paper-item>
-            <paper-item>
+            <paper-item value="whapp">
               WhatsApp
             </paper-item>
           </paper-menu>

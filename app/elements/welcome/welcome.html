@@ -24,11 +24,11 @@
               </p>
             </div>
             <div class="card-actions">
-              <paper-button raised class="custom indigo">
+              <paper-button raised class="custom indigo" id="slackButton">
                 <iron-icon icon="add"></iron-icon>
                 Slack
               </paper-button>
-              <paper-button raised class="custom green">
+              <paper-button raised class="custom green" id="whappButton">
                 <iron-icon icon="add"></iron-icon>
                 Whatsapp
               </paper-button>
@@ -45,9 +45,17 @@
 
       Polymer({
         is: 'karl-welcome',
-
-        properties: {
-          selected: 0
+        listeners: {
+          'slackButton.tap': 'addSlack',
+          'whappButton.tap': 'addWhapp'
+        },
+        addSlack: function(e) {
+          var tabHandler = document.querySelector("tab-handler");
+          tabHandler.addTab('slack');
+        },
+        addWhapp: function(e) {
+          var tabHandler = document.querySelector("tab-handler");
+          tabHandler.addTab('whapp');
         }
       });
     })();
