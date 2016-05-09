@@ -1,0 +1,55 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="karl-welcome">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+    </style>
+    
+    <!--<div class="welcome fullcontent" hidden="{{tabs.length == 0}}">-->
+    <div class="welcome fullcontent">
+      <div class="scroll"></div>
+      <div class="container flex-center-justified fullcontent">
+        <div>
+          <paper-card style="width: 400px;">
+            <div class="card-content">
+              <h1>Welcome!</h1>
+              <p>
+                Karl is an app inspired by Franz and Slackdeck.
+              </p>
+              <p>
+                Click on the icons below to add a new tab for a service.
+              </p>
+            </div>
+            <div class="card-actions">
+              <paper-button raised class="custom indigo">
+                <iron-icon icon="add"></iron-icon>
+                Slack
+              </paper-button>
+              <paper-button raised class="custom green">
+                <iron-icon icon="add"></iron-icon>
+                Whatsapp
+              </paper-button>
+            </div>
+          </paper-card>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'karl-welcome',
+
+        properties: {
+          selected: 0
+        }
+      });
+    })();
+  </script>
+</dom-module>

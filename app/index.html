@@ -74,52 +74,8 @@
       </paper-toolbar>
       
       <div class="content">
-        <div class="tabs" hidden="{{tabs.length > 0}}">
-          <paper-tabs selected="{{selected}}">
-            <paper-tab>TAB 1</paper-tab>
-            <paper-tab>TAB 2</paper-tab>
-            <paper-tab>TAB 3</paper-tab>
-          </paper-tabs>
-          
-          <iron-pages selected="{{selected}}">
-            <div>
-              Page 1
-              <!--<webview id="simian" src="https://simian.slack.com" class="fullcontent"></webview>-->
-            </div>
-            <div>Page 2</div>
-            <div>Page 3</div>
-          </iron-pages>
-        </div>
-        
-        <!--<div class="welcome fullcontent" hidden="{{tabs.length == 0}}">-->
-        <div class="welcome fullcontent">
-          <div class="scroll"></div>
-          <div class="container flex-center-justified fullcontent">
-            <div>
-              <paper-card style="width: 400px;">
-                <div class="card-content">
-                  <h1>Welcome!</h1>
-                  <p>
-                    Karl is an app inspired by Franz and Slackdeck.
-                  </p>
-                  <p>
-                    Click on the icons below to add a new tab for a service.
-                  </p>
-                </div>
-                <div class="card-actions">
-                  <paper-button raised class="custom indigo">
-                    <iron-icon icon="add"></iron-icon>
-                    Slack
-                  </paper-button>
-                  <paper-button raised class="custom green">
-                    <iron-icon icon="add"></iron-icon>
-                    Whatsapp
-                  </paper-button>
-                </div>
-              </paper-card>
-            </div>
-          </div>
-        </div>
+        <service-tabs></service-tabs>
+        <karl-welcome></karl-welcome>
       </div>
     </paper-header-panel>
   </template>

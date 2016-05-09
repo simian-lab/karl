@@ -168,46 +168,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     color: #eeff41;
     margin: 10px;
   }
-  
-  .flex-center-justified {
-    @apply(--layout-horizontal);
-    @apply(--layout-center-justified);
-    @apply(--layout-center);
-  }
-  
-  .fullcontent {
-  width: 100%;
-  height: calc(100vh - 64px);
-  border: 0;
-}
-
-.welcome {
-  background-color: var(--primary-color);
-  overflow: hidden;
-  position: relative;
-}
-
-@keyframes scroller {
-  0% {
-    transform: translate3d(0,0,0);
-  }
-  100% {
-    transform: translate3d(0,-320px,0);
-  }
-}
-
-.scroll {
-  background-image: url(http://scarbroughstudios.com/img/codepen.svg);
-  background-position: center center;
-  background-size: 500px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 400%;
-  width: 100%;
-  z-index: 0;
-  animation: scroller 5s linear infinite;
-}
 
   /* Breakpoints */
 

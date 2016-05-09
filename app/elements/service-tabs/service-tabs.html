@@ -1,0 +1,47 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="service-tabs">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      span,
+      input {
+        @apply(--paper-font-body2);
+      }
+    </style>
+
+    <div class="tabs" hidden="{{tabs.length > 0}}">
+      <paper-tabs selected="{{selected}}">
+        <paper-tab>TAB 1</paper-tab>
+        <paper-tab>TAB 2</paper-tab>
+        <paper-tab>TAB 3</paper-tab>
+      </paper-tabs>
+      
+      <iron-pages selected="{{selected}}">
+        <div>
+          Page 1
+          <!--<webview id="simian" src="https://simian.slack.com" class="fullcontent"></webview>-->
+        </div>
+        <div>Page 2</div>
+        <div>Page 3</div>
+      </iron-pages>
+    </div>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'service-tabs',
+
+        properties: {
+          selected: 0
+        }
+      });
+    })();
+  </script>
+</dom-module>

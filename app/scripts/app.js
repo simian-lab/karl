@@ -16,11 +16,10 @@
   // See https://github.com/Polymer/polymer/issues/1381
   window.addEventListener('WebComponentsReady', function() {
     // imports are loaded and elements have been registered
-    app.selected = 0;
-    
-    chrome.storage.sync.get('tabs', function(items) {
-      console.log(items);
-    });
+  });
+  
+  chrome.storage.sync.get('tabs', function(items) {
+    app.tabs = items;
   });
 
 })(document);
