@@ -1,5 +1,16 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
+<dom-module id="tab-handler">
+  <template>
+    <paper-dialog id="newTabDialog" heading="Add new service" transition="paper-dialog-transition-center">
+      <paper-input id="dialog-add-note-text" label="Text"></paper-input>
+      <paper-button label="Cancel" dismissive></paper-button>
+      <paper-button label="Ok" affirmative default
+          on-click="{{addNote}}"></paper-button>
+    </paper-dialog>
+  </template>
+</dom-module>
+
 <script>
   // register a new element called proto-element
   Polymer({
@@ -18,7 +29,10 @@
       }
     },
     addTab: function(type) {
-      console.log('add tab ' + type);
+      this.$.newTabDialog.open();
+    },
+    createNewTab: function(type) {
+      console.log('creating ' + type + 'account');
     }
   });
 </script>
